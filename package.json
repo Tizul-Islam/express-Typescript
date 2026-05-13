@@ -1,7 +1,7 @@
 {
   "name": "express-typescript",
   "version": "1.0.0",
-  "description": "",
+  "description": "npm init --y \r npm i -D typescript\r npm tsc --init",
   "main": "index.ts",
   "scripts": {
     "start": "ts-node index.ts",
@@ -14,7 +14,18 @@
   "dependencies": {
     "@types/express": "^5.0.6",
     "@types/node": "^25.7.0",
-    "express": "^5.2.1",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
     "typescript": "^6.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tizul-Islam/express-Typescript.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Tizul-Islam/express-Typescript/issues"
+  },
+  "homepage": "https://github.com/Tizul-Islam/express-Typescript#readme"
 }
