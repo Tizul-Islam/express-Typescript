@@ -1,3 +1,5 @@
-npm init --y 
+npm init -y
 npm i -D typescript
-npm tsc --init
+npx tsc --init
+npm i express 
+npm i -D @types/express
