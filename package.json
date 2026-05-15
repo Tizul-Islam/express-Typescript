@@ -4,8 +4,8 @@
   "description": "npm init --y \r npm i -D typescript\r npm tsc --init",
   "main": "index.ts",
   "scripts": {
-    "start": "node dist/index.js",
-    "dev": "nodemon -q --exec tsx server.ts",
+    "start": "node dist/server.js",
+    "dev": "nodemon -q --exec tsx src/server.ts",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

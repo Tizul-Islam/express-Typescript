@@ -1,12 +1,9 @@
 import "dotenv/config";
 import express, { Application, Request, Response } from "express";
-import { Pool } from "pg";
+import { iniDB, pool } from "./db";
 import config from "./config";
 
-
-const pool = new Pool({
-  connectionString: config.connection_string,
-});
+ 
 
 const app: Application = express();
 const port= config.port;
@@ -16,25 +13,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-const iniDB = async () => {
-  try {
-    await pool.query(`
-      CREATE TABLE IF NOT EXISTS users(
-        id SERIAL PRIMARY KEY,
-        name VARCHAR(50) NOT NULL,
-        email VARCHAR(50) UNIQUE NOT NULL,
-        password VARCHAR(50) NOT NULL,
-        is_active BOOLEAN NOT NULL DEFAULT true,
-        age INT,
-        created_at TIMESTAMP NOT NULL DEFAULT NOW(),
-        updated_at TIMESTAMP NOT NULL DEFAULT NOW()
-      )
-    `);
-    console.log("database connected");
-  } catch (error) {
-    console.log("error", error);
-  }
-};
 iniDB();
 
 app.get("/", (req: Request, res: Response) => {

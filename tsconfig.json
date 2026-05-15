@@ -11,8 +11,5 @@
   },
   "include": [
     "src/**/*"
-  ],
-  "scripts": {
-    "dev": "nodemon -q --exec tsx server.ts"
-  }
+  ]
 }
