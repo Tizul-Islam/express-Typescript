@@ -1,15 +1,14 @@
 import "dotenv/config";
 import express, { Application, Request, Response } from "express";
-import { iniDB } from "./db";
 import { UserRoutes } from "./modules/user/user.route";
+import { profileRoutes } from "./modules/profile/profile.route";
+import { authRoutes } from "./modules/auth/auth.route";
 
 const app: Application = express();
 
 app.use(express.text());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-iniDB();
 
 app.get("/", (req: Request, res: Response) => {
   // res.send('Hello World!')
@@ -20,5 +19,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.use("/api/user", UserRoutes);
+app.use("/api/profile", profileRoutes);
+app.use("/api/auth", authRoutes);
 
 export default app;

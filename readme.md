@@ -19,3 +19,9 @@ const pool =new Pool {
 
 .env 
 npm i dotenv
+
+auth
+npm i bcrypt
+
+
+npm i jsonwebtoken
